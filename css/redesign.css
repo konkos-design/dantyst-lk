@@ -8,3 +8,28 @@
 @media(min-width:651px) and (max-width:950px){.hero-photo-main img{transform:scale(1.25);transform-origin:center bottom}.hero-photo-main:hover img{transform:scale(1.28)}}
 @media(max-width:650px){.hero-photo-main img{object-position:50% 80%;transform:scale(1.15);transform-origin:center bottom}.hero-photo-secondary img{object-position:50% 45%;transform:scale(1.25)}.about-photo img{object-position:50% 50%}.gallery-item img{object-position:50% 55%}}
 @media(prefers-reduced-motion:reduce){.float-chip,.float-experience,.status-dot:after{animation:none}.js-reveal .reveal{opacity:1;transform:none}}
+
+/* Precisely centered controls; no glyph rotation or click ripple. */
+.card-arrow,.rail-controls button,.back-top,.lightbox-close,[data-clear-search]{display:inline-flex;align-items:center;justify-content:center;padding:0;line-height:0;position:relative;flex-shrink:0;overflow:hidden}
+.card-arrow svg,.rail-controls svg,.back-top svg,.lightbox-close svg,[data-clear-search] svg{display:block;width:18px;height:18px;flex:none;pointer-events:none}
+.service-icon svg{display:block;width:29px;height:29px}
+.service-card:hover .card-arrow,details.service-card[open] .card-arrow{transform:none}
+details.service-card .card-arrow svg{transition:transform .25s ease}
+details.service-card[open] .card-arrow svg{transform:rotate(45deg)}
+details.service-card summary:after{content:none;display:none}
+.faq summary:after{content:'';display:block;flex:none;width:18px;height:18px;background:linear-gradient(currentColor,currentColor) center/14px 1.5px no-repeat,linear-gradient(currentColor,currentColor) center/1.5px 14px no-repeat;transition:transform .25s}
+.faq details[open] summary:after{transform:rotate(45deg);content:''}
+.ripple{display:none}
+.lightbox-close{position:absolute}
+.text-link{text-decoration:none}
+.rail-controls{align-items:center}
+[data-clear-search]{height:36px}
+.search-box button:hover{transform:none;background:var(--mint);border-radius:50%}
+.price-layout{grid-template-columns:minmax(0,1fr)}
+.review-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:24px 0 16px}
+.review-toolbar p{margin:0;font-weight:600}
+.rail-position{font-size:14px;line-height:1.4;min-width:44px;text-align:center;font-variant-numeric:tabular-nums;color:var(--muted)}
+.review-rail{align-items:stretch;overscroll-behavior-x:contain}
+.review-rail .review{display:flex;flex-direction:column}
+.review-rail .review small{margin-top:auto;padding-top:12px}
+@media(max-width:650px){.review-toolbar{flex-wrap:wrap}.review-toolbar p{font-size:16px}.rail-controls{gap:8px}.price-layout{grid-template-columns:minmax(0,1fr)}}
